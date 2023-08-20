@@ -1,44 +1,35 @@
 public class Node {
-    // Attributes
-    private String data;
-    private Node next;
-    private char charAt;
+    protected Node next;
+    protected Patient patient;
 
-    // Implement Basic Constructor
-    public Node() {
+    public Node(Patient patient) {
+        this.patient = patient;
         this.next = null;
     }
 
-    // Implement Parametric Constructor
-    public Node(String data) {
-        this.data = data;
-        this.next = null;
-    }
-
-    // Implement Mutators
-    public void setData (String data) {
-        this.data = data;
-    }
-    public void setNext (Node next) {
-        this.next = next;
-    }
-    public void setData(char charAt) {
-        this.charAt = charAt;
-    }
-
-    // Implement Accessors
-    public String getData() {
-        return data;
-    }
     public Node getNext() {
         return next;
     }
-    public char getCharAt() {
-        return charAt;
+
+    public void setNext(Node next) {
+        this.next = next;
     }
 
-    // Methods
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+
     public void printNode() {
-        System.out.print(this.getData() + " ");
+        //TODO: Implement this method
+        String ans="Patient name: " +this.patient.getName()+"\n";
+        ans+="Patient ID: " +this.patient.getId()+"\n";
+        ans+="Patient triage level: "+this.patient.getTriageLevel()+"\n";
+        ans+="Patient phone number: "+this.patient.getPhoneNumber()+"\n";
+        ans+="Patient address: "+this.patient.getLocation()+"\n";
+        System.out.println(ans);
     }
 }
